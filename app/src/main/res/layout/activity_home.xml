@@ -63,6 +63,7 @@
             android:layout_marginTop="10dp"
             android:height="48dp"
             android:ems="10"
+            android:hint="Nhập địa điểm"
             android:inputType="textPersonName"
             android:text="TDTU q7"
             tools:ignore="TouchTargetSizeCheck" />

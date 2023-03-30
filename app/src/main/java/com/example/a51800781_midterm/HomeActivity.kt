@@ -31,9 +31,7 @@ class HomeActivity : AppCompatActivity() {
             val end: String = endInput.text.toString()
             intent.putExtra("start", start)
             intent.putExtra("end", end)
-            intent.putExtra("key", "AIzaSyCOi9tAVIFl2RCoAcaur5_9iIaw50tdpOI")
             intent.putExtra("mode", "FIND_PATH")
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
         tdtuBtn.setOnClickListener {

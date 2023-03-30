@@ -33,13 +33,11 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
     private var start: String = ""
     private var end: String = ""
     private var address: String = ""
-    private var key: String = ""
     private var mode: String = ""
 
     private var markerPoints: ArrayList<LatLng> = ArrayList()
     private val directionAPI: GoogleMapAPI = MapAPI.getInstance().create(GoogleMapAPI::class.java)
 
-    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -52,7 +50,6 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
         mapFragment.getMapAsync(this)
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         enableMyLocation()
@@ -63,7 +60,6 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
             start = extras.getString("start").toString()
             end = extras.getString("end").toString()
             address = extras.getString("address").toString()
-            key = extras.getString("key").toString()
         }
 
         when (mode) {
@@ -80,13 +76,13 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                 runBlocking {
                     launch(coroutineContext) {
                         val result = withContext(Dispatchers.IO) {
-                            directionAPI.getGeoCode(address = address, key = key)
+                            directionAPI.getGeoCode(address = address)
                         }
-                        val location = LatLng(
-                            result.body()?.results?.get(0)?.geometry?.location?.lat
-                                ?: 10.7326689,
-                            result.body()?.results?.get(0)?.geometry?.location?.lng ?: 106.6997696
-                        )
+                        val location = if (result.body()?.results?.size!! > 0) LatLng(
+                            result.body()?.results?.get(0)?.geometry?.location?.lat!!,
+                            result.body()?.results?.get(0)?.geometry?.location?.lng!!
+                        ) else LatLng(10.7326689, 106.6997696)
+                        mMap.addMarker(MarkerOptions().position(location).title("Marker"))
                         val cameraPosition = CameraPosition.Builder()
                             .target(location)
                             .zoom(15f)
@@ -98,17 +94,15 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
             "FIND_PATH" -> {
                 runBlocking {
                     launch(coroutineContext) {
-    //                     Limited to 1 request per day
+                        //                     Limited to 1 request per day
                         val result = withContext(Dispatchers.IO) {
-                            directionAPI.getDirection(origin = start, destination = end, key = key)
+                            directionAPI.getDirection(origin = start, destination = end)
                         }
                         Log.d("HUY_DEBUG", result.toString())
-                        var polygonEncoded =
-                            result.body()?.routes?.get(0)?.overview_polyline?.points.toString()
-                        if (polygonEncoded.startsWith("null")) {
-                            polygonEncoded = "gfo`AoyfjSnNaAjF[n@A~AIAWO@gBJ{ANiCPcAFkAg@q@YmHeCoBm@aGoBwCkAsCcAo@SyAU}CSsLoAkAKKZo@dH[`DcCW"
-                        }
-
+                        val polygonEncoded =
+                            if (result.body()!!.routes.isNotEmpty()) result.body()
+                                ?.routes?.get(0)?.overview_polyline?.points.toString()
+                            else "gfo`AoyfjSnNaAjF[n@A~AIAWO@gBJ{ANiCPcAFkAg@q@YmHeCoBm@aGoBwCkAsCcAo@SyAU}CSsLoAkAKKZo@dH[`DcCW"
                         val direction: List<LatLng> = PolyUtil.decode(polygonEncoded)
                         val options = PolylineOptions()
                         options.color(Color.RED)
@@ -122,7 +116,6 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
                     }
                 }
-
             }
         }
         mMap.setOnMyLocationButtonClickListener(this)
@@ -161,13 +154,11 @@ class MapsActivity : AppCompatActivity(), GoogleMap.OnMyLocationButtonClickListe
                         val result =
                             directionAPI.getDirection(
                                 origin = "${origin.latitude},${origin.longitude}",
-                                destination = "${dest.latitude},${dest.longitude}",
-                                key = key
+                                destination = "${dest.latitude},${dest.longitude}"
                             )
                         val polygonEncoded =
                             result.body()?.routes?.get(0)?.overview_polyline?.points.toString()
                         val direction: List<LatLng> = PolyUtil.decode(polygonEncoded)
-                        // what is Name shadowed: options
                         val options = PolylineOptions()
                         options.color(Color.RED)
                         options.width(5f)
