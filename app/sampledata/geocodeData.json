@@ -1,0 +1,79 @@
+{
+  "results": [
+    {
+      "address_components": [
+        {
+          "long_name": "469",
+          "short_name": "469",
+          "types": [
+            "street_number"
+          ]
+        },
+        {
+          "long_name": "Đường Nguyễn Hữu Thọ",
+          "short_name": "Đ. Nguyễn Hữu Thọ",
+          "types": [
+            "route"
+          ]
+        },
+        {
+          "long_name": "Quận 7",
+          "short_name": "Quận 7",
+          "types": [
+            "administrative_area_level_2",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Thành phố Hồ Chí Minh",
+          "short_name": "Thành phố Hồ Chí Minh",
+          "types": [
+            "administrative_area_level_1",
+            "political"
+          ]
+        },
+        {
+          "long_name": "Vietnam",
+          "short_name": "VN",
+          "types": [
+            "country",
+            "political"
+          ]
+        }
+      ],
+      "formatted_address": "469 Đ. Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh, Vietnam",
+      "geometry": {
+        "location": {
+          "lat": 10.7409407,
+          "lng": 106.7018078
+        },
+        "location_type": "ROOFTOP",
+        "viewport": {
+          "northeast": {
+            "lat": 10.7423349802915,
+            "lng": 106.7028880302915
+          },
+          "southwest": {
+            "lat": 10.7396370197085,
+            "lng": 106.7001900697085
+          }
+        }
+      },
+      "partial_match": true,
+      "place_id": "ChIJuf9TI58vdTERe86UdaSdtGo",
+      "plus_code": {
+        "compound_code": "PPR2+9P District 7, Ho Chi Minh City, Vietnam",
+        "global_code": "7P28PPR2+9P"
+      },
+      "types": [
+        "establishment",
+        "food",
+        "grocery_or_supermarket",
+        "point_of_interest",
+        "store",
+        "supermarket"
+      ]
+    }
+  ],
+  "status": "OK"
+}

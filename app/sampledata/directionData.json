@@ -1,0 +1,194 @@
+{
+  "geocoded_waypoints": [
+    {
+      "geocoder_status": "OK",
+      "partial_match": true,
+      "place_id": "ChIJo4F6dLIodTERE7asVTCBwTM",
+      "types": [
+        "establishment",
+        "point_of_interest",
+        "university"
+      ]
+    },
+    {
+      "geocoder_status": "OK",
+      "partial_match": true,
+      "place_id": "ChIJuf9TI58vdTERe86UdaSdtGo",
+      "types": [
+        "establishment",
+        "food",
+        "grocery_or_supermarket",
+        "point_of_interest",
+        "store",
+        "supermarket"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "bounds": {
+        "northeast": {
+          "lat": 10.7404445,
+          "lng": 106.7026819
+        },
+        "southwest": {
+          "lat": 10.7332303,
+          "lng": 106.699347
+        }
+      },
+      "copyrights": "Map data ©2023",
+      "legs": [
+        {
+          "distance": {
+            "text": "1.2 km",
+            "value": 1234
+          },
+          "duration": {
+            "text": "4 mins",
+            "value": 253
+          },
+          "end_address": "469 Đ. Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh, Vietnam",
+          "end_location": {
+            "lat": 10.7404445,
+            "lng": 106.701167
+          },
+          "start_address": "19 Đ. Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Thành phố Hồ Chí Minh, Vietnam",
+          "start_location": {
+            "lat": 10.7332568,
+            "lng": 106.699347
+          },
+          "steps": [
+            {
+              "distance": {
+                "text": "58 m",
+                "value": 58
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 27
+              },
+              "end_location": {
+                "lat": 10.7332303,
+                "lng": 106.6998774
+              },
+              "html_instructions": "Head \u003cb\u003eeast\u003c/b\u003e on \u003cb\u003eĐường D6\u003c/b\u003e toward \u003cb\u003eĐ. Nguyễn Hữu Thọ\u003c/b\u003e",
+              "polyline": {
+                "points": "{io`A}ufjS?ABeA@O?Q"
+              },
+              "start_location": {
+                "lat": 10.7332568,
+                "lng": 106.699347
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.8 km",
+                "value": 801
+              },
+              "duration": {
+                "text": "2 mins",
+                "value": 115
+              },
+              "end_location": {
+                "lat": 10.7402969,
+                "lng": 106.7009746
+              },
+              "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eĐ. Nguyễn Hữu Thọ\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003ePass by Cửa Hàng Nội Thất Chlb Đức (on the right in 350m)\u003c/div\u003e",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "uio`AgyfjS?IS?Y@cBAQAs@EqAGa@Ec@CkDa@}CY_CScFe@uD_@qD_@"
+              },
+              "start_location": {
+                "lat": 10.7332303,
+                "lng": 106.6998774
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 km",
+                "value": 187
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 47
+              },
+              "end_location": {
+                "lat": 10.7400209,
+                "lng": 106.7026671
+              },
+              "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eNguyễn Thị Thập\u003c/b\u003e",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "{up`Aa`gjSJkADe@Dc@Fi@D_@JiADi@"
+              },
+              "start_location": {
+                "lat": 10.7402969,
+                "lng": 106.7009746
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "0.2 km",
+                "value": 180
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 62
+              },
+              "end_location": {
+                "lat": 10.7403703,
+                "lng": 106.7011538
+              },
+              "html_instructions": "Make a \u003cb\u003eU-turn\u003c/b\u003e",
+              "maneuver": "uturn-left",
+              "polyline": {
+                "points": "ctp`AujgjSQAMtAIx@[`D"
+              },
+              "start_location": {
+                "lat": 10.7400209,
+                "lng": 106.7026671
+              },
+              "travel_mode": "DRIVING"
+            },
+            {
+              "distance": {
+                "text": "8 m",
+                "value": 8
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 2
+              },
+              "end_location": {
+                "lat": 10.7404445,
+                "lng": 106.701167
+              },
+              "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eDestination will be on the right\u003c/div\u003e",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "ivp`AeagjSMC"
+              },
+              "start_location": {
+                "lat": 10.7403703,
+                "lng": 106.7011538
+              },
+              "travel_mode": "DRIVING"
+            }
+          ],
+          "traffic_speed_entry": [],
+          "via_waypoint": []
+        }
+      ],
+      "overview_polyline": {
+        "points": "{io`A}ufjSDiB?IS?}B?yDUoEe@}Gm@yKeAqD_@JkAJiALiAPsBQAMtAe@zEMC"
+      },
+      "summary": "Đ. Nguyễn Hữu Thọ and Nguyễn Thị Thập",
+      "warnings": [],
+      "waypoint_order": []
+    }
+  ],
+  "status": "OK"
+}
